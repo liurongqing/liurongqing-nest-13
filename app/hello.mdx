@@ -1,0 +1,121 @@
+import {
+  SandpackProvider,
+  SandpackLayout,
+  SandpackCodeEditor,
+  SandpackPreview,
+} from "@codesandbox/sandpack-react";
+
+export const meta = {
+  author: "Rich Haines",
+};
+
+## Hello, Next.js! Blog liurongqing's
+
+---
+
+Inline `code` has `back-ticks around` it.
+
+```javascript
+var s = "JavaScript syntax highlighting";
+alert(s);
+```
+
+```python
+s = "Python syntax highlighting"
+print s
+```
+
+```
+No language indicated, so no syntax highlighting.
+But let's throw in a <b>tag</b>.
+```
+
+Colons can be used to align columns.
+
+<table>
+  <tr>
+    <td>123</td>
+    <td>123</td>
+    <td>123</td>
+    <td>123</td>
+  </tr>
+  <tr>
+    <td>123</td>
+    <td>123</td>
+    <td>123</td>
+    <td>123</td>
+  </tr>
+  <tr>
+    <td>123</td>
+    <td>123</td>
+    <td>123</td>
+    <td>123</td>
+  </tr>
+</table>
+
+| Tables        |      Are      | Cool |
+| ------------- | :-----------: | ---: |
+| col 3 is      | right-aligned |      |
+| col 2 is      |   centered    |      |
+| zebra stripes |   are neat    |      |
+
+The outer pipes (|) are optional, and you don't need to make the raw Markdown line up prettily. You can also use inline Markdown.
+
+| Markdown | Less      | Pretty     |
+| -------- | --------- | ---------- |
+| _Still_  | `renders` | **nicely** |
+| 1        | 2         | 3          |
+
+# 123
+
+## 1231
+
+{" "}
+<SandpackProvider template="nextjs">
+  <SandpackLayout className="!rounded-2xl shadow-md">
+    <SandpackCodeEditor />
+    <SandpackPreview />
+  </SandpackLayout>
+</SandpackProvider>
+### 12312
+
+- One
+- Two
+- Three
+
+You can import and use React components in MDX files.
+
+# GFM
+
+## Autolink literals
+
+1. 12312
+1. 123123
+1. 12312
+
+```html
+<html></html>
+```
+
+www.example.com, https://example.com, and contact@example.com.
+
+## Footnote
+
+A note[^1]
+
+[^1]: Big note.
+
+## Strikethrough
+
+~one~ or ~~two~~ tildes.
+
+## Table
+
+| a   | b   |   c |  d  |
+| --- | :-- | --: | :-: |
+| 1   | 12  |  12 |  1  |
+
+## Tasklist
+
+- [ ] to do
+- [x] done
