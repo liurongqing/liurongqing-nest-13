@@ -15,11 +15,7 @@ export default function App() {
     }
     `,
     "app/hello.mdx": `## 123`,
-    "app/index.tsx": "console.log(123)"
+    "app/index.tsx": "console.log(123)",
   };
-  return <Sandpack 
-  options={{
-    externalResources: ["https://cdn.jsdelivr.net/npm/next@13.4.2/config.min.js"]
-  }}
-  files={files} theme="auto" template="nextjs"/>;
+  return <Sandpack options={{}} files={files} theme="auto" template="nextjs" />;
 }
