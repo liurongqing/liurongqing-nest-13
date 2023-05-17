@@ -1,9 +1,6 @@
 "use client";
 
-import HelloWorld from "./hello.mdx";
-
+import HomePage from "./homePage.mdx";
 export default function Page() {
-  return (
-      <HelloWorld />
-  );
+  return <HomePage />;
 }

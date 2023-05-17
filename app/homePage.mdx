@@ -1,0 +1,20 @@
+import {
+  Sandpack,
+  SandpackProvider,
+  SandpackLayout,
+  SandpackCodeEditor,
+  SandpackPreview,
+  SandpackFileExplorer,
+} from "@codesandbox/sandpack-react";
+
+
+## 在线快速调试 React
+
+
+<SandpackProvider template="react">
+  <SandpackLayout>
+    <SandpackFileExplorer />
+    <SandpackCodeEditor showTabs/>
+  </SandpackLayout>
+  <SandpackPreview className="shadow-md"/>
+</SandpackProvider>
