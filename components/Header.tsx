@@ -28,7 +28,7 @@ export const Header = () => {
               className={`
                 pr-2 sm:pr-6 no-underline hover:text-purple-900
                 ${
-                  menu.path.startsWith(pathname)
+                  pathname.startsWith(menu.path)
                     ? "text-purple-900"
                     : "text-gray-900"
                 }  
