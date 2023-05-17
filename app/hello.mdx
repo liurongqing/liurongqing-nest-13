@@ -1,4 +1,5 @@
 import {
+  Sandpack,
   SandpackProvider,
   SandpackLayout,
   SandpackCodeEditor,
@@ -11,9 +12,24 @@ export const meta = {
 
 ## Hello, Next.js! Blog liurongqing's
 
+<Sandpack
+  template="react"
+  options={{
+    showTabs: true,
+    showLineNumbers: false,
+    showInlineErrors: true,
+    editorHeight: 280,
+    editorWidthPercentage: 60
+  }}
+></Sandpack>
+
+==123==
+
 ---
 
 Inline `code` has `back-ticks around` it.
+
+**123**
 
 ```javascript
 var s = "JavaScript syntax highlighting";
@@ -31,8 +47,6 @@ But let's throw in a <b>tag</b>.
 ```
 
 Colons can be used to align columns.
-
-
 
 | Tables        |      Are      | Cool |
 | ------------- | :-----------: | ---: |
@@ -55,12 +69,14 @@ The outer pipes (|) are optional, and you don't need to make the raw Markdown li
 > 123
 
 {" "}
+
 <SandpackProvider template="nextjs">
   <SandpackLayout className="!rounded-2xl shadow-md">
     <SandpackCodeEditor showTabs={true} />
-    <SandpackPreview/>
+    <SandpackPreview />
   </SandpackLayout>
 </SandpackProvider>
+
 ### 12312
 
 - One
