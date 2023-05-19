@@ -26,7 +26,7 @@ export const Header = () => {
             <Link
               key={menu.path}
               className={`
-                pr-2 font-medium sm:pr-6 no-underline hover:text-purple-900
+                pr-2 font-semibold sm:pr-6 no-underline hover:text-purple-900
                 ${
                   pathname.startsWith(menu.path)
                     ? "text-purple-900"
