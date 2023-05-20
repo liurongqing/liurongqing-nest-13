@@ -12,7 +12,7 @@ export const Header = () => {
     <div className="flex justify-between items-center py-4">
       <Link
         href="/"
-        className="flex flex-1 items-center text-gray-900 no-underline"
+        className="flex items-center text-gray-900 no-underline"
       >
         <GiCat size={36} />
 
@@ -20,6 +20,7 @@ export const Header = () => {
           RongqingBlog
         </div>
       </Link>
+      <div className="flex-1"></div>
       <div className="flex items-center">
         <div className="hidden sm:block">
           {menus.map((menu) => (
