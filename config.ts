@@ -1,5 +1,9 @@
 export const menus = [
   {
+    path: "/",
+    title: "Home",
+  },
+  {
     path: "/blog",
     title: "Blog",
   },

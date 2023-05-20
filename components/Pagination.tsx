@@ -8,36 +8,33 @@ export const Pagination = ({ total, current }) => {
     <div className="space-y-2 pt-6 pb-8 md:space-y-5">
       <nav className="flex justify-between">
         {!prevPage && (
-          <button
-            rel="previous"
-            className="cursor-auto disabled:opacity-50"
-            disabled={!prevPage}
-          >
+          <a rel="previous" className="cursor-not-allowed text-gray-500">
             Previous
-          </button>
+          </a>
         )}
         {prevPage && (
           <Link
+            rel="previous"
+            className="no-underline text-gray-900 hover:text-blog-primary-color"
             href={current - 1 === 1 ? `/blog/` : `/blog/page/${current - 1}`}
           >
-            <button rel="previous">Previous</button>
+            Previous
           </Link>
         )}
         <span>
           {current} of {total}
         </span>
         {!nextPage && (
-          <button
-            rel="next"
-            className="cursor-auto disabled:opacity-50"
-            disabled={!nextPage}
-          >
+          <a rel="next" className="cursor-not-allowed text-gray-500">
             Next
-          </button>
+          </a>
         )}
         {nextPage && (
-          <Link href={`/blog/page/${current + 1}`}>
-            <button rel="next">Next</button>
+          <Link
+            className="no-underline text-gray-900 hover:text-blog-primary-color"
+            href={`/blog/page/${current + 1}`}
+          >
+            Next
           </Link>
         )}
       </nav>
