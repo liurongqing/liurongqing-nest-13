@@ -1,17 +1,18 @@
+/**
+ * 博客列表首页
+ */
 import Link from "next/link";
 import { compareDesc, format, parseISO } from "date-fns";
+import { Pagination } from "@/components";
 import { allPosts, Post } from "contentlayer/generated";
 
 function PostCard(post: Post) {
   return (
-    <div className="flex flex-wrap py-4 items-start border border-solid border-blue-700">
-      <time
-        dateTime={post.date}
-        className="text-gray-500 w-full sm:w-auto border border-solid border-red-100"
-      >
+    <div className="flex flex-wrap py-4 items-start">
+      <time dateTime={post.date} className="text-gray-500 w-full sm:w-auto">
         {format(parseISO(post.date), "LLLL d, yyyy")}
       </time>
-      <div className="flex flex-col flex-1 ml-0 sm:ml-10 border border-solid border-red-900">
+      <div className="flex flex-col flex-1 ml-0 sm:ml-10">
         <h2 className="text-2xl leading-8 m-0 p-0">
           <Link
             className="no-underline font-semibold text-gray-800 hover:text-blog-primary-color"
@@ -48,6 +49,7 @@ export default function Home() {
       {posts.map((post, idx) => (
         <PostCard key={idx} {...post} />
       ))}
+      <Pagination total={allPosts?.length ?? 0} current={1} />
     </div>
   );
 }

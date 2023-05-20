@@ -21,6 +21,7 @@ export default function Page({ params }: { params: { slug: string } }) {
   return (
     <div>
       {/* Some code ... */}
+      <h1>page</h1>
       <MDXContent />
     </div>
   );
