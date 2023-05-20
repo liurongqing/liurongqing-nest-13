@@ -1,3 +1,9 @@
+import { Divider } from "@/components";
 export default function Page() {
-  return ( <h1>我是首页</h1> );
-};
+  return (
+    <>
+      <Divider/>
+      <h1>我是首页</h1>
+    </>
+  );
+}

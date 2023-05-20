@@ -27,10 +27,10 @@ export const Header = () => {
             <Link
               key={menu.path}
               className={`
-                pr-2 font-semibold sm:pr-6 no-underline hover:text-blog-primary-color
+                pr-2 font-semibold sm:pr-6 no-underline hover:text-blue-500
                 ${
                   pathname === menu.path
-                    ? "text-blog-primary-color"
+                    ? "text-blue-500"
                     : "text-gray-900"
                 }
               `}

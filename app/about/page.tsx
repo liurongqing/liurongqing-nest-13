@@ -1,13 +1,16 @@
 "use client";
 
-import PageMDX from "./page.mdx";
-import { MDXWrapper } from "@/components/MDXWrapper";
+import { Divider } from "@/components";
 
 export default function Page() {
   return (
     // <MDXWrapper>
     //   <PageMDX />
     // </MDXWrapper>
-    <h1>123</h1>
+    <>
+      <Divider />
+      <div>关于我</div>
+      <div>haha</div>
+    </>
   );
 }

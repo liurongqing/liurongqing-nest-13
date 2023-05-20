@@ -15,7 +15,7 @@ export const Pagination = ({ total, current }) => {
         {prevPage && (
           <Link
             rel="previous"
-            className="no-underline text-gray-900 hover:text-blog-primary-color"
+            className="no-underline text-gray-900 hover:text-blue-500"
             href={current - 1 === 1 ? `/posts/` : `/posts/page/${current - 1}`}
           >
             Previous
@@ -31,7 +31,7 @@ export const Pagination = ({ total, current }) => {
         )}
         {nextPage && (
           <Link
-            className="no-underline text-gray-900 hover:text-blog-primary-color"
+            className="no-underline text-gray-900 hover:text-blue-500"
             href={`/posts/page/${current + 1}`}
           >
             Next

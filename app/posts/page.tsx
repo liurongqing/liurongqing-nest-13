@@ -3,7 +3,7 @@
  */
 import Link from "next/link";
 import { compareDesc, format, parseISO } from "date-fns";
-import { Pagination } from "@/components";
+import { Divider, Pagination } from "@/components";
 import { allPosts, Post } from "contentlayer/generated";
 
 function PostCard(post: Post) {
@@ -15,7 +15,7 @@ function PostCard(post: Post) {
       <div className="flex flex-col flex-1 ml-0 sm:ml-10">
         <h2 className="text-2xl leading-8 m-0 p-0">
           <Link
-            className="no-underline font-semibold text-gray-800 hover:text-blog-primary-color"
+            className="no-underline font-bold text-gray-800 hover:text-blue-500"
             href={post.url}
           >
             {post.title}
@@ -24,7 +24,7 @@ function PostCard(post: Post) {
         <div className="flex flex-wrap gap-3">
           {["tag1", "tag2", "tag3"].map((tag) => (
             <Link
-              className="no-underline font-semibold  text-blue-500 hover:text-blue-700"
+              className="no-underline font-semibold  text-blue-500 hover:text-blue-600"
               href={`/tags/${tag}`}
             >
               {tag}
@@ -45,7 +45,8 @@ export default function Home() {
   console.log("posts", { posts });
 
   return (
-    <div className="pt-4  border-0 border-t border-gray-300 border-solid">
+    <div>
+      <Divider />
       {posts.map((post, idx) => (
         <PostCard key={idx} {...post} />
       ))}
