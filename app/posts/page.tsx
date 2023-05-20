@@ -4,12 +4,19 @@
 import Link from "next/link";
 import { compareDesc, format, parseISO } from "date-fns";
 import { Divider, Pagination } from "@/components";
-import { allPosts, Post } from "contentlayer/generated";
+import {
+  allPosts,
+  Post,
+  Page,
+  allPages,
+  isType,
+  allDocuments,
+} from "contentlayer/generated";
 
 function PostCard(post: Post) {
   return (
     <div className="flex flex-wrap py-4 items-start">
-      <time dateTime={post.date} className="text-gray-500 w-full sm:w-auto">
+      <time dateTime={post.date} className="text-gray-500 w-full sm:w-40">
         {format(parseISO(post.date), "LLLL d, yyyy")}
       </time>
       <div className="flex flex-col flex-1 ml-0 sm:ml-10">
@@ -41,8 +48,6 @@ export default function Home() {
   const posts = allPosts.sort((a, b) =>
     compareDesc(new Date(a.date), new Date(b.date))
   );
-
-  console.log("posts", { posts });
 
   return (
     <div>

@@ -10,7 +10,7 @@ export async function generateStaticParams() {
 }
 
 export default function Page({ params }: { params: { slug: string } }) {
-  console.log("2...");
+  // console.log("2...");
   const post = allPosts.find((post) => post._raw.flattenedPath === params.slug);
 
   // 404 if the post does not exist.

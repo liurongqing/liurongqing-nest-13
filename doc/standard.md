@@ -1,16 +1,9 @@
 1. markdown 文档，只使用 h2 h3 作为标题
 
-查看所有 blog
-/blog
-
-查看所有 tag
-/tags
-
-当前 tag 的文章列表
-/tags/tag
-
-查看分页列表
-/blog/page/1
-
-博客详情
-/blog/title
+- 首页还是放一个在线编辑器
+- blog 列表页，每页5-6条
+- blog page页， 过滤第几页
+- tags 列表页， 所有tag
+- tag 列表页，当前过滤 tag
+- 关于我，弄下github 首页那个
+- github 评论
