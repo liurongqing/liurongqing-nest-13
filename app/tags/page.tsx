@@ -1,15 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { MDXWrapper } from "@/components/MDXWrapper";
-import PageMDX from "./page.mdx";
+// import { MDXWrapper } from "@/components/MDXWrapper";
+// import PageMDX from "./page.mdx";
 
 export default function Page() {
   return (
     <>
-      <MDXWrapper>
+      {/* <MDXWrapper>
         <PageMDX />
-      </MDXWrapper>
+      </MDXWrapper> */}
       <div className="flex flex-wrap mt-2">
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((v) => (
           <Link
