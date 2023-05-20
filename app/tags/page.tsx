@@ -13,8 +13,9 @@ export default function Page() {
       <div className="flex flex-wrap mt-2">
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((v) => (
           <Link
+            key={v}
             href="/tags/v"
-            className="text-xs no-underline rounded-md m-2 px-2 py-1 text-white bg-purple-600 hover:bg-purple-700"
+            className="text-xs no-underline rounded-md m-2 px-2 py-1 text-white bg-blog-primary-color hover:opacity-80"
           >
             我是标签
           </Link>

@@ -26,8 +26,12 @@ export const Header = () => {
             <Link
               key={menu.path}
               className={`
-                pr-2 font-semibold sm:pr-6 no-underline hover:text-purple-900
-                ${pathname === menu.path ? "text-purple-900" : "text-gray-900"}
+                pr-2 font-semibold sm:pr-6 no-underline hover:text-blog-primary-color
+                ${
+                  pathname === menu.path
+                    ? "text-blog-primary-color"
+                    : "text-gray-900"
+                }
               `}
               href={menu.path}
             >
