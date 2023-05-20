@@ -1,16 +1,17 @@
-"use client";
-
-import { Pagination } from "@/components/Pagination";
-import PageMDX from "./page.mdx";
-import { MDXWrapper } from "@/components/MDXWrapper";
+// "use client";
+// import { Pagination } from "@/components/Pagination";
+// import PageMDX from "./page.mdx";
+import { Suspense } from "react";
+// import { MDXWrapper } from "@/components/MDXWrapper";
 // import { getAllPosts } from "@/lib/getPostsFilePaths";
-import { useEffect } from "react";
+// import { useEffect } from "react";
+import { MDXRemote } from "next-mdx-remote/rsc";
 
 export default function Page() {
-  console.log(123);
-  useEffect(() => {
-    // getAllPosts([]);
-  }, []);
+  // console.log(123);
+  // useEffect(() => {
+  //   // getAllPosts([]);
+  // }, []);
   return (
     <>
       <div>
@@ -20,9 +21,13 @@ export default function Page() {
             <div>title</div>
             <div>descript</div>
           </div>
+          {/* <Suspense fallback={<>Loading...</>}> */}
+          {/* <MDXRemote /> */}
+          {/* <h1>123</h1> */}
+          {/* </Suspense> */}
         </div>
       </div>
-      <Pagination total={100} current={1} />
+      {/* <Pagination total={100} current={1} /> */}
     </>
   );
 }
