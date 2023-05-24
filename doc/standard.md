@@ -13,3 +13,7 @@
 - blog page页， 过滤第几页
 - tags 列表页， 所有tag
 - tag 列表页，当前过滤 tag
+
+
+# giscus 使用
+https://giscus.app/zh-CN
