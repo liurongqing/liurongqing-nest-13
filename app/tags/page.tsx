@@ -17,9 +17,11 @@ export default function Page() {
       <Divider />
       <div className="flex flex-wrap mt-2">
         {Object.keys(tagsCountMap).map((k) => (
-          <div className="mr-2 rounded px-2 py-1 sm:mr-4 hover:bg-gray-100">
+          <div
+            key={k}
+            className="mr-2 rounded px-2 py-1 sm:mr-4 hover:bg-gray-100"
+          >
             <Link
-              key={k}
               href={`/tags/${k}`}
               className="text-base no-underline text-blue-500 hover:text-blue-600"
             >
