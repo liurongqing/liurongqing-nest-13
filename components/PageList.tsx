@@ -43,7 +43,7 @@ export function PageList({ current = 1, tag = null }) {
   let posts = allPosts.sort((a, b) =>
     compareDesc(new Date(a.date), new Date(b.date))
   );
-  console.log("tag", { tag });
+  // console.log("tag", { tag });
   if (tag) {
     // 如果根据 tag 搜索的
     posts = posts.filter((post) => post?.tags?.includes?.(tag));
