@@ -17,7 +17,7 @@ export const Header = () => {
         <GiCat size={36} />
 
         <div className="hidden ml-2 text-2xl sm:block font-medium">
-          Rongqing'Blog
+          RongqingBlog
         </div>
       </Link>
       <div className="flex-1"></div>

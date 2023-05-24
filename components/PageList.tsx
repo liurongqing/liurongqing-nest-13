@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { compareDesc, format, parseISO } from "date-fns";
 import { Pagination } from "@/components";
-import { pageSize } from "@/consts";
+import { pageSize } from "@/config";
 import { allPosts, Post } from "contentlayer/generated";
 
 function PostCard(post: Post) {

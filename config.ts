@@ -26,3 +26,5 @@ export const comment = {
   mapping: "pathname",
   lang: "en",
 };
+
+export const pageSize = 6;

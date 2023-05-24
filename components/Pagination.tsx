@@ -1,4 +1,4 @@
-import { pageSize } from "@/consts";
+import { pageSize } from "@/config";
 import Link from "next/link";
 
 export const Pagination = ({ total, current }) => {
