@@ -1,3 +1,6 @@
+/**
+ * 博客详情页/具体内容页面
+ */
 import { allPosts } from "contentlayer/generated";
 import { compareDesc, format, parseISO } from "date-fns";
 import { useMDXComponent } from "next-contentlayer/hooks";
@@ -10,13 +13,10 @@ export async function generateStaticParams() {
 }
 
 export default function Page({ params }: { params: { slug: string } }) {
-  // console.log("2...");
   const post = allPosts.find((post) => post._raw.flattenedPath === params.slug);
 
-  // 404 if the post does not exist.
   if (!post) notFound();
 
-  console.log("post", { post });
   const MDXContent = useMDXComponent(post.body.code);
 
   return (

@@ -5,7 +5,7 @@ import { pageSize } from "@/consts";
 import { allPosts, Post } from "contentlayer/generated";
 
 function PostCard(post: Post) {
-  console.log('post', post.tags)
+  // console.log("post", post.tags);
   return (
     <div className="flex flex-wrap py-4 items-start">
       <time dateTime={post.date} className="text-gray-500 w-full sm:w-40">
@@ -37,18 +37,29 @@ function PostCard(post: Post) {
   );
 }
 
-export function PageList({ current }) {
+export function PageList({ current = 1, tag = null }) {
   const skip = (current - 1) * pageSize;
-  const posts = allPosts
-    .slice(skip, skip + pageSize)
-    .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
+
+  let posts = allPosts.sort((a, b) =>
+    compareDesc(new Date(a.date), new Date(b.date))
+  );
+  console.log("tag", { tag });
+  if (tag) {
+    // 如果根据 tag 搜索的
+    posts = posts.filter((post) => post?.tags?.includes?.(tag));
+  } else {
+    posts = posts.slice(skip, skip + pageSize);
+  }
 
   return (
     <>
       {posts.map((post, idx) => (
         <PostCard key={idx} {...post} />
       ))}
-      <Pagination total={allPosts?.length ?? 0} current={current} />
+      {/* 至少二页才显示分页 */}
+      {allPosts?.length > pageSize && !tag && (
+        <Pagination total={allPosts?.length ?? 0} current={current} />
+      )}
     </>
   );
 }
