@@ -31,6 +31,7 @@ function PostCard(post: Post) {
         <div className="flex flex-wrap gap-3">
           {["tag1", "tag2", "tag3"].map((tag) => (
             <Link
+              key={tag}
               className="no-underline font-semibold  text-blue-500 hover:text-blue-600"
               href={`/tags/${tag}`}
             >
