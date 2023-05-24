@@ -1,8 +1,10 @@
+import { pageSize } from "@/consts";
 import Link from "next/link";
 
 export const Pagination = ({ total, current }) => {
+  const pages = Math.ceil(total / pageSize);
   const prevPage = current > 1;
-  const nextPage = current < total;
+  const nextPage = current < pages;
 
   return (
     <div className="space-y-2 pt-6 pb-8 md:space-y-5">
@@ -22,7 +24,7 @@ export const Pagination = ({ total, current }) => {
           </Link>
         )}
         <span>
-          {current} of {total}
+          {current} of {pages}
         </span>
         {!nextPage && (
           <a rel="next" className="cursor-not-allowed text-gray-500">
@@ -32,7 +34,7 @@ export const Pagination = ({ total, current }) => {
         {nextPage && (
           <Link
             className="no-underline text-gray-900 hover:text-blue-500"
-            href={`/posts/page/${current + 1}`}
+            href={`/posts/page/${+current + 1}`}
           >
             Next
           </Link>
