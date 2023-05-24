@@ -1,7 +1,7 @@
-export * from "./Header";
-export * from "./Layout";
-export * from "./Content";
-export * from "./Pagination";
-export * from "./Divider";
-export * from "./PageList";
+export { Header } from "./Header";
+export { Layout } from "./Layout";
+export { Content } from "./Content";
+export { Pagination } from "./Pagination";
+export { Divider } from "./Divider";
+export { PageList } from "./PageList";
 export { Input } from "./Input";

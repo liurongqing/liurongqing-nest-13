@@ -9,7 +9,7 @@ export const Post = defineDocumentType(() => ({
     title: { type: "string", required: true },
     date: { type: "date", required: true },
     tags: { type: "list", of: { type: "string" } },
-    description: { type: "string" },
+    summary: { type: "string" },
   },
   computedFields: {
     url: {
@@ -26,7 +26,7 @@ export const Page = defineDocumentType(() => ({
   fields: {
     title: { type: "string", required: true },
     date: { type: "date", required: true },
-    description: { type: "string" },
+    summary: { type: "string" },
   },
   computedFields: {
     url: {

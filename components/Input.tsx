@@ -1,46 +1,35 @@
 "use client";
 
-export const Input = ({ id, label, type = "text", disabled }) => {
+import { AiOutlineSearch } from "react-icons/ai";
+
+export const Input = ({ handleChange }) => {
   return (
-    <div className="w-full relative">
+    <div className="relative w-full sm:max-w-lg">
       <input
-        id={id}
-        disabled={disabled}
-        placeholder=" "
-        type={type}
+        placeholder="搜索文章"
+        type="text"
+        onChange={(e) => handleChange(e.target.value)}
         className={`
-          peer
+          block max-w-lg
           w-full
-          p-4
-          pt-6 
-          font-light 
+          
           bg-white 
+          rounded-md 
+          box-border
           border
+          border-solid
           border-gray-300
+          px-4
+          py-2
           text-gray-900
-          rounded-md
+          focus:border-blue-500
+          after:border-0
+          before:border-0
+          outline-none
           transition
         `}
       />
-      <label
-        className={`
-          absolute 
-          text-md
-          duration-150 
-          transform 
-          -translate-y-3 
-          top-5 
-          z-10 
-          origin-[0] 
-          left-4
-          peer-placeholder-shown:scale-100 
-          peer-placeholder-shown:translate-y-0 
-          peer-focus:scale-75
-          peer-focus:-translate-y-4
-        `}
-      >
-        {label}
-      </label>
+      <AiOutlineSearch className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400" />
     </div>
   );
 };

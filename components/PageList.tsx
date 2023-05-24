@@ -1,8 +1,10 @@
+"use client";
 import Link from "next/link";
 import { compareDesc, format, parseISO } from "date-fns";
-import { Pagination } from "@/components";
+import { Pagination, Input } from "@/components";
 import { pageSize } from "@/config";
 import { allPosts, Post } from "contentlayer/generated";
+import { useState, useTransition } from "react";
 
 function PostCard(post: Post) {
   // console.log("post", post.tags);
@@ -31,13 +33,16 @@ function PostCard(post: Post) {
             </Link>
           ))}
         </div>
-        <div className="mt-3 text-gray-500">{post.description}</div>
+        <div className="mt-3 text-gray-500">{post.summary}</div>
       </div>
     </div>
   );
 }
 
 export function PageList({ current = 1, tag = null }) {
+  const [searchValue, setSearchValue] = useState(null);
+  const [isPending, startTransition] = useTransition();
+
   const skip = (current - 1) * pageSize;
 
   let posts = allPosts.sort((a, b) =>
@@ -47,17 +52,37 @@ export function PageList({ current = 1, tag = null }) {
   if (tag) {
     // 如果根据 tag 搜索的
     posts = posts.filter((post) => post?.tags?.includes?.(tag));
-  } else {
+  } else if(!searchValue){
+    // 有搜索词的时候不分页
     posts = posts.slice(skip, skip + pageSize);
   }
 
+  if (searchValue) {
+    posts = posts.filter((post: Post) => {
+      const searchContent = post.title + post.summary + post?.tags?.join(" ");
+      return searchContent.toLowerCase().includes(searchValue);
+    });
+  }
+
+  async function handleChange(value) {
+    startTransition(() => {
+      setSearchValue(value);
+    });
+  }
+
+  console.log("ispen", isPending);
+
   return (
     <>
+      <div className="mb-2 sm:mb-4">
+        <Input handleChange={handleChange} />
+      </div>
+      {posts?.length === 0 && <span className="text-gray-800">No posts found</span>}
       {posts.map((post, idx) => (
         <PostCard key={idx} {...post} />
       ))}
       {/* 至少二页才显示分页 */}
-      {allPosts?.length > pageSize && !tag && (
+      {allPosts?.length > pageSize && !tag && !searchValue && (
         <Pagination total={allPosts?.length ?? 0} current={current} />
       )}
     </>
