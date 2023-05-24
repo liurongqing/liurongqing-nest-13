@@ -1,9 +1,13 @@
 ---
 type: Page
-title: xxxxxx
-description: xxxx
+title: 关于我
+description: 关于我
 date: 2022-01-01
 ---
+
+import { AiOutlineMail } from "react-icons/ai";
+import { TbWorldWww } from "react-icons/tb"
+import { MdOutlinePhoneIphone } from "react-icons/md";
 
 ### On Github
 
@@ -11,9 +15,18 @@ date: 2022-01-01
 
 ### Contact
 
-email: phpgege@gmail.com  
-house: https://www.liurongqing.com  
-phone: 16620882081
+<div className="flex items-center">
+  <AiOutlineMail size={12}/>
+  <a href="mailto:phpgege@gmail.com" className="ml-2 no-underline text-gray-800 hover:text-blue-500 text-base" target="_blank">phpgege@gmail.com</a>
+</div>
+<div className="flex items-center">
+  <TbWorldWww size={12}/>
+  <a href="https://www.liurongqing.com" className="ml-2 no-underline text-gray-800 hover:text-blue-500 text-sm" target="_blank">https://www.liurongqing.com</a>
+</div>
+<div className="flex items-center">
+  <MdOutlinePhoneIphone size={12} />
+  <a href="tel:16620882081" className="ml-2 no-underline text-gray-800 hover:text-blue-500 text-sm">16620882081</a>
+</div>
 
 ### Open source plugin
 
@@ -37,7 +50,6 @@ phone: 16620882081
 
 <div className="flex justify-center items-center w-full">
   Powered by
-  
   <a
     className="text-blue-500 no-underline hover:text-blue-600"
     href="https://github.com/anuraghazra/github-readme-stats"

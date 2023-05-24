@@ -12,7 +12,7 @@ export const menus = [
     title: "Tags",
   },
   {
-    path: "/about",
+    path: "/pages/about",
     title: "About",
   },
 ];
