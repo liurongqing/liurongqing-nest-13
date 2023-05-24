@@ -52,7 +52,7 @@ export function PageList({ current = 1, tag = null }) {
   if (tag) {
     // 如果根据 tag 搜索的
     posts = posts.filter((post) => post?.tags?.includes?.(tag));
-  } else if(!searchValue){
+  } else if (!searchValue) {
     // 有搜索词的时候不分页
     posts = posts.slice(skip, skip + pageSize);
   }
@@ -74,10 +74,15 @@ export function PageList({ current = 1, tag = null }) {
 
   return (
     <>
-      <div className="mb-2 sm:mb-4">
-        <Input handleChange={handleChange} />
-      </div>
-      {posts?.length === 0 && <span className="text-gray-800">No posts found</span>}
+      {!tag && (
+        <div className="mb-2 sm:mb-4">
+          <Input handleChange={handleChange} />
+        </div>
+      )}
+
+      {posts?.length === 0 && (
+        <span className="text-gray-800">No posts found</span>
+      )}
       {posts.map((post, idx) => (
         <PostCard key={idx} {...post} />
       ))}
