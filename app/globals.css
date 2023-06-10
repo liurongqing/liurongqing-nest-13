@@ -3,3 +3,8 @@
 @tailwind utilities;
 
 @import "./github-markdown-light.min.css";
+
+.sp-code-editor pre {
+  padding: 0;
+  margin-bottom: 0;
+}

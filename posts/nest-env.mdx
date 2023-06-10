@@ -5,51 +5,54 @@ type: Post
 summary: 在 nest 中使用 @nestjs/config，内部使用的是 dotenv。
 ---
 
+import { AiOutlineMail } from "react-icons/ai";
+import { Code } from "../components/Code.tsx";
+
 ## 1. 安装 `@nestjs/config`
 
-    ```shell
-    npm i --save @nestjs/config
-    ```
+<Code code="npm i --save @nestjs/config" />
 
 ## 2. 创建环境变量文件
 
-    ```shell
-    touch .env .env.development .env.production
-    ```
+<Code code="touch .env .env.development .env.production" />
 
 ## 3. 根模块中注入
 
-    ```shell
-    import { Module } from '@nestjs/common';
+<Code code={
+    `import { Module } from '@nestjs/common';
     import { ConfigModule } from '@nestjs/config';
 
     @Module({
         imports: [
             ConfigModule.forRoot({
-                envFilePath: ['.env', `.env.${process.env.NODE_ENV}`],
+                envFilePath: ['.env', \`.env.${process.env.NODE_ENV}\`],
             })
         ],
     })
-    export class AppModule {}
-    ```
+    export class AppModule {}`
+
+} />
 
 ## 4. 编写环境变量
 
-    `.env` 共用
+`.env` 共用
 
-    `.env.development` 开发环境下使用
+`.env.development` 开发环境下使用
 
-    `.env.production` 生产环境下使用
+`.env.production` 生产环境下使用
 
-    ```shell
-    # 在 package.json 下的 scripts 中
-    {
-        "scripts": "NODE_ENV=development npm start"
-    }
+在 package.json 下的 scripts 中，添加判断环境变量。
 
-    # 在项目中使用
-    process.env.[VAR]
-    ```
+<Code
+  code={`{
+    "scripts": "NODE_ENV=development npm start"
+}`}
+/>
+
+
+在项目中使用
+
+<Code code="process.env.[VAR]" />
 
 ## 说明
 
@@ -57,5 +60,5 @@ summary: 在 nest 中使用 @nestjs/config，内部使用的是 dotenv。
 
 ## 参考地址
 
-[Nest @nestjs/config](https://docs.nestjs.com/techniques/configuration#custom-env-file-path)    
+[Nest @nestjs/config](https://docs.nestjs.com/techniques/configuration#custom-env-file-path)  
 [dotenv](https://github.com/motdotla/dotenv)

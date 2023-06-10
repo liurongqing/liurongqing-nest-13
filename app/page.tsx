@@ -9,9 +9,12 @@ import {
   SandpackFileExplorer,
 } from "@codesandbox/sandpack-react";
 
+import { Code } from "@/components";
+
 export default function Page() {
   return (
     <>
+      <Code code="123" />
       <Divider />
       <SandpackProvider template="react">
         <SandpackLayout>
