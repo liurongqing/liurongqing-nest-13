@@ -8,7 +8,7 @@ import {
 
 export const Code = ({ code = "" }) => (
   <SandpackProvider>
-    <div className="shadow-md">
+    <div className="shadow-sm">
     <SandpackCodeViewer code={code} />
     </div>
   </SandpackProvider>
