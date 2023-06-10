@@ -25,7 +25,7 @@ import { Code } from "../components/Code.tsx";
     @Module({
         imports: [
             ConfigModule.forRoot({
-                envFilePath: ['.env', \`.env.${process.env.NODE_ENV}\`],
+                envFilePath: ['.env', \`.env.\${process.env.NODE_ENV}\`],
             })
         ],
     })
@@ -35,7 +35,7 @@ import { Code } from "../components/Code.tsx";
 
 ## 4. 编写环境变量
 
-`.env` 共用
+`.env` 共用变量
 
 `.env.development` 开发环境下使用
 
