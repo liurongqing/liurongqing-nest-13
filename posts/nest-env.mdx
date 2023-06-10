@@ -1,0 +1,61 @@
+---
+title: 在 nest 中使用设置环境变量
+date: 2023-06-10
+type: Post
+summary: 在 nest 中使用 @nestjs/config，内部使用的是 dotenv。
+---
+
+## 1. 安装 `@nestjs/config`
+
+    ```shell
+    npm i --save @nestjs/config
+    ```
+
+## 2. 创建环境变量文件
+
+    ```shell
+    touch .env .env.development .env.production
+    ```
+
+## 3. 根模块中注入
+
+    ```shell
+    import { Module } from '@nestjs/common';
+    import { ConfigModule } from '@nestjs/config';
+
+    @Module({
+        imports: [
+            ConfigModule.forRoot({
+                envFilePath: ['.env', `.env.${process.env.NODE_ENV}`],
+            })
+        ],
+    })
+    export class AppModule {}
+    ```
+
+## 4. 编写环境变量
+
+    `.env` 共用
+
+    `.env.development` 开发环境下使用
+
+    `.env.production` 生产环境下使用
+
+    ```shell
+    # 在 package.json 下的 scripts 中
+    {
+        "scripts": "NODE_ENV=development npm start"
+    }
+
+    # 在项目中使用
+    process.env.[VAR]
+    ```
+
+## 说明
+
+通过在 `scripts` 中注入一个变量，来判断项目要加载哪个环境变量文件
+
+## 参考地址
+
+[Nest @nestjs/config](https://docs.nestjs.com/techniques/configuration#custom-env-file-path)    
+[dotenv](https://github.com/motdotla/dotenv)
